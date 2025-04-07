@@ -48,6 +48,12 @@ const SearchResultSection = () => {
 
     const authorList = result.map((auth) => auth.author);
 
+    /**
+     * While looping through author names we need to cache the name and count like key:value
+     *
+     * So when the check would be get the auth name from cache, if it is there user the count value else call the api and update the count & cache
+     * we can loop through the data and update the submissionCount in the result state
+     */
     const submissionAllCount = Promise.all(
       authorList.map(async (authorName) => {
         return await fetchSubmissionCount(

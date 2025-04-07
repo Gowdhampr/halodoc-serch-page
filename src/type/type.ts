@@ -10,6 +10,7 @@ export interface SearchResultRefinedData {
   author: string;
   title: string;
   url: string;
+  submissionCount?: number;
 }
 
 export interface WikiSearchResponseData {
